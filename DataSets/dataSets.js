@@ -6,7 +6,7 @@ var UserSchema = new Schema({
 });
 var UserModel = mongoose.model('users', UserSchema);
 function saveUser(user) {
-    var userSave = new UserModel();
+    var userSave = new UserModel(user);
     userSave.save(function (err, data) {
         if (err) {
             console.log(err);

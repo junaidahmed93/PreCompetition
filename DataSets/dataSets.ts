@@ -10,13 +10,14 @@ let UserSchema = new Schema({
 let UserModel = mongoose.model('users',UserSchema);
 
 function saveUser(user) {
-     let userSave = new UserModel();
+     let userSave = new UserModel(user);
      userSave.save((err,data)=>{
          if(err){
              console.log(err)
          }
          else{
              console.log("Data inserted");
+             
          }
      })      
      

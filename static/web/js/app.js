@@ -22,3 +22,12 @@ angular.module('starter', ['ionic'])
     }
   });
 })
+.config(function($stateProvider,$urlRouterProvider){
+    $stateProvider
+    .state('home',{
+        url : '/home',
+        templateUrl: '/web/templates/home.html',
+        controller : 'homeCtrl'
+    })
+    $urlRouterProvider.otherwise('/home');
+})
